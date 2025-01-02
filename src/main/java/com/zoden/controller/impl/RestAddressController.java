@@ -5,7 +5,7 @@ import com.zoden.controller.RestBaseController;
 import com.zoden.controller.RootEntity;
 import com.zoden.dto.DtoAddress;
 import com.zoden.dto.DtoAddressIU;
-import com.zoden.service.impl.AddressServiceImpl;
+import com.zoden.service.impl.AddressService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/address")
-public class RestAddressControllerImpl extends RestBaseController implements IRestAddressController {
+public class RestAddressController extends RestBaseController implements IRestAddressController {
 
-    private final AddressServiceImpl addressService;
-    RestAddressControllerImpl(AddressServiceImpl addressService) {
+    private final AddressService addressService;
+    RestAddressController(AddressService addressService) {
         this.addressService = addressService;
     }
 

@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class AddressServiceImpl implements IAddressService {
+public class AddressService implements IAddressService {
 
     private final AddressRepository addressRepository;
-    AddressServiceImpl(AddressRepository addressRepository){
+    AddressService(AddressRepository addressRepository){
         this.addressRepository = addressRepository;
     }
 
@@ -29,6 +29,7 @@ public class AddressServiceImpl implements IAddressService {
     @Override
     public DtoAddress saveAddress(DtoAddressIU dtoAddressIU) {
         DtoAddress dtoAddress = new DtoAddress();
+
         Address savedAddress = addressRepository.save(createAddress(dtoAddressIU));
         BeanUtils.copyProperties(savedAddress, dtoAddress);
 
