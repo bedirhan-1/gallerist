@@ -24,7 +24,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class AuthenticationServiceImpl implements IAuthenticationService {
+public class AuthenticationService implements IAuthenticationService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -32,7 +32,7 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
     private final JwtService jwtService;
     private final RefreshTokenRepository refreshTokenRepository;
 
-    AuthenticationServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder, AuthenticationProvider authenticationProvider, JwtService jwtService, RefreshTokenRepository refreshTokenRepository) {
+    AuthenticationService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder, AuthenticationProvider authenticationProvider, JwtService jwtService, RefreshTokenRepository refreshTokenRepository) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.authenticationProvider = authenticationProvider;

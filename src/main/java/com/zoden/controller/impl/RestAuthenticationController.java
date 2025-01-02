@@ -7,17 +7,17 @@ import com.zoden.dto.AuthRequest;
 import com.zoden.dto.AuthResponse;
 import com.zoden.dto.DtoUser;
 import com.zoden.dto.RefreshTokenRequest;
-import com.zoden.service.impl.AuthenticationServiceImpl;
+import com.zoden.service.impl.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RestAuthenticationControllerImpl extends RestBaseController implements IRestAuthenticationController {
+public class RestAuthenticationController extends RestBaseController implements IRestAuthenticationController {
 
-    private final AuthenticationServiceImpl authenticationService;
-    RestAuthenticationControllerImpl(AuthenticationServiceImpl authenticationService) {
+    private final AuthenticationService authenticationService;
+    RestAuthenticationController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
 
