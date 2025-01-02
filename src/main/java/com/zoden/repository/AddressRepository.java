@@ -1,0 +1,7 @@
+package com.zoden.repository;
+
+import com.zoden.model.Address;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AddressRepository extends JpaRepository<Address, Long> {
+}
